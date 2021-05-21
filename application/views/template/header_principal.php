@@ -241,11 +241,91 @@
             </ul>
           </li>
         <?php } ?>
+
+
+
+     <?php if($permission['inventory-add']==1 || $permission['inventory-list']==1 || $permission['inventory-add_sub']==1 || $permission['inventory-list_sub']==1){ ?>
+          <li class="treeview <?php if($page_title=='Inventaires'){ echo "active";} ?>">
+            <a href="#">
+              <i class="fa fa-pie-chart"></i>
+              <span>Paramètres</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <?php if($permission['inventory-list']==1){ ?>
+               <li class="<?php if($page_title_sous=='Liste des inventaires'){ echo "active";} ?>"><a href="<?=site_url('inventory/list')?>"><i class="fa fa-circle-o"></i> Contact et echanges</a></li>
+              <?php } ?>
+               <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Zones de contacts</a></li>
+              <?php } ?>
+             
+
+  <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Devis et factures</a></li>
+              <?php } ?>
+
+              <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Taxes et TVA</a></li>
+              <?php } ?>
+
+
+              <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Comptabilite</a></li>
+              <?php } ?>
+
+
+
+               <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Numerotation</a></li>
+              <?php } ?>
+
+
+
+              
+
+
+               <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Option</a></li>
+              <?php } ?>
+
+
+
+
+              <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Autres</a></li>
+              <?php } ?>
+
+
+
+
+
+            </ul>
+          </li>
+        <?php } ?>
+
+
+
+
         <li class="header">EXTRA</li>
         <?php if($permission['backups']==1){ ?>
         <!-- <li class="<?php if($page_title=='Backups'){ echo "active";} ?>"><a href="<?=site_url('backups')?>"><i class="fa fa-circle-o text-red"></i> <span>Backups</span></a></li> -->
         <?php } ?>
         <li class="<?php if($page_title=='Documentation'){ echo "active";} ?>"><a href="<?=site_url('main/documentation')?>"><i class="fa fa-circle-o text-blue"></i> <span>Documentation</span></a></li>
+
+<!-- PARAMETRE ----->
+
+
+
+
+
+
+
+
+
+
+
       </ul>
     </section>
     <!-- /.sidebar -->
