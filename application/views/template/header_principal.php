@@ -181,6 +181,33 @@
           </a>
         </li>
         <?php } ?>
+
+
+<?php if($permission['inventory-add']==1 || $permission['inventory-list']==1 || $permission['inventory-add_sub']==1 || $permission['inventory-list_sub']==1){ ?>
+          <li class="treeview <?php if($page_title=='Inventaires'){ echo "active";} ?>">
+            <a href="#">
+              <i class="fa fa-pie-chart"></i>
+              <span>Devis et Factures</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <?php if($permission['inventory-list']==1){ ?>
+               <li class="<?php if($page_title_sous=='Liste des inventaires'){ echo "active";} ?>"><a href="<?=site_url('inventory/list')?>"><i class="fa fa-circle-o"></i> Créer  un devis</a></li>
+              <?php } ?>
+              <?php if($permission['inventory-list_sub']==1){ ?>
+              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Créer une facture</a></li>
+              <?php } ?>
+            </ul>
+          </li>
+        <?php } ?>
+
+
+
+
+
+
         <?php if($permission['product-add']==1 || $permission['product-list']==1 ||  $permission['product-import'] == 1){ ?>
          <li class="treeview <?php if($page_title=='Products'){ echo "active";} ?>">
           <a href="#">
@@ -222,25 +249,7 @@
           </li>
         <?php } ?>
 
-         <?php if($permission['inventory-add']==1 || $permission['inventory-list']==1 || $permission['inventory-add_sub']==1 || $permission['inventory-list_sub']==1){ ?>
-          <li class="treeview <?php if($page_title=='Inventaires'){ echo "active";} ?>">
-            <a href="#">
-              <i class="fa fa-pie-chart"></i>
-              <span>Devis et Factures</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <?php if($permission['inventory-list']==1){ ?>
-               <li class="<?php if($page_title_sous=='Liste des inventaires'){ echo "active";} ?>"><a href="<?=site_url('inventory/list')?>"><i class="fa fa-circle-o"></i> Ajouter un client</a></li>
-              <?php } ?>
-              <?php if($permission['inventory-list_sub']==1){ ?>
-              <li class="<?php if($page_title_sous=='Liste des blocks'){ echo "active";} ?>"><a href="<?=site_url('inventory/list_sub')?>"><i class="fa fa-circle-o"></i> Liste des clients</a></li>
-              <?php } ?>
-            </ul>
-          </li>
-        <?php } ?>
+         
 
 
 
