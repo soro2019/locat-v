@@ -37,8 +37,11 @@
           </div>
         </div>
     		<div class="row">
+          
           <div class="col-sm-12">
-        		<div class="box-body">
+        		
+            <div class="box-body">
+              
               <div class="container-fluid">
                 <br>
           		  <table id="example1" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
@@ -183,6 +186,9 @@
       </div>  
   </div>
 <?php } ?>
+
+
+
 
 <script type="text/javascript">
   function toggle(source)
